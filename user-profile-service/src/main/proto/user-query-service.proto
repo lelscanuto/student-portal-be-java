@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.mist.student_portal.user_profile_service.infrastracture.api.adapters.grpc;
+
+message UserLiteIdentifier {
+  int64 user_id = 1;
+  string email = 2;
+
+}
+
+service UserQueryAdapter {
+  rpc findByUserId(UserIdRequest) returns (UserLiteIdentifier);
+}
+
+message UserIdRequest {
+  string userId = 1;
+}
+
+
