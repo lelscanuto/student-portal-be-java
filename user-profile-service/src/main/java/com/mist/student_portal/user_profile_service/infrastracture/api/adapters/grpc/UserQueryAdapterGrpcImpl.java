@@ -31,7 +31,7 @@ public class UserQueryAdapterGrpcImpl extends UserQueryAdapterGrpc.UserQueryAdap
                   com.mist.student_portal.user_profile_service.infrastracture.api.adapters.grpc
                       .UserQueryService.UserLiteIdentifier.newBuilder()
                       .setUserId(res.getUserId())
-                      .setEmail(res.getUserEmail())
+                      .setEmail(res.getEmail())
                       .build());
 
               responseObserver.onCompleted();

@@ -2,6 +2,7 @@ package com.mist.student_portal.user_profile_service.application.use_cases.impl;
 
 import com.mist.student_portal.user_profile_service.application.dto.response.UserLiteDTO;
 import com.mist.student_portal.user_profile_service.application.use_cases.UserQueryService;
+import com.mist.student_portal.user_profile_service.common.exceptions.UserNotFoundException;
 import com.mist.student_portal.user_profile_service.domain.repositories.UserRepository;
 import com.mist.student_portal.user_profile_service.infrastracture.mappers.UserMapper;
 import java.util.concurrent.CompletableFuture;
@@ -28,6 +29,6 @@ public class UserQueryServiceImpl implements UserQueryService {
         userRepository
             .findByUserId(userId)
             .map(userMapper::toUserLiteDTO)
-            .orElseThrow(() -> new RuntimeException("Something")));
+            .orElseThrow(() -> new UserNotFoundException(userId)));
   }
 }

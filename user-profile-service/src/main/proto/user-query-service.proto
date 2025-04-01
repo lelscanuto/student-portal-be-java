@@ -12,8 +12,31 @@ service UserQueryAdapter {
   rpc findByUserId(UserIdRequest) returns (UserLiteIdentifier);
 }
 
+service UserOnboarding {
+  rpc activate(UserIdRequest) returns (UserLiteIdentifier);
+  rpc register(UserRegisterRequest) returns (UserLiteIdentifier);
+}
+
 message UserIdRequest {
   string userId = 1;
 }
+
+message UserRegisterRequest {
+  string userId = 1;
+  string firstName = 2;
+  string middleName = 3;
+  string lastName = 4;
+  repeated string roles = 6;
+  Address address = 7;
+}
+
+message Address {
+  string zip = 1;
+  string unitNo = 2;
+  string city = 3;
+  string province = 4;
+  string street = 5;
+}
+
 
 
