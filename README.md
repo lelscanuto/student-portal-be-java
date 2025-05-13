@@ -1,9 +1,13 @@
 # student-portal-be-java
+
 Backend Services for Student Portal
 
-This is the backend service for the Student Portal, built using **Spring Boot** and **OpenJDK 21**. It provides various functionalities for student management, including user account creation, authentication, course registration, grades management, and more.
+This is the backend service for the Student Portal, built using **Spring Boot** and **OpenJDK 21**. It provides various
+functionalities for student management, including user account creation, authentication, course registration, grades
+management, and more.
 
 ## Table of Contents
+
 1. [Features](#features)
 2. [Technologies Used](#technologies-used)
 3. [Setup and Installation](#setup-and-installation)
@@ -11,6 +15,7 @@ This is the backend service for the Student Portal, built using **Spring Boot** 
 ## Features
 
 ## Technologies Used
+
 - **Spring Boot 3**: The main framework for building the backend.
 - **Spring Security**: Authentication and authorization via JWT.
 - **Spring Data JPA**: For interacting with the PostgreSQL database.
@@ -27,29 +32,31 @@ This is the backend service for the Student Portal, built using **Spring Boot** 
 ## Setup and Installation
 
 ### Prerequisites
+
 Before setting up the project, ensure the following tools are installed:
 
-1. **OpenJDK 21**: The project uses **OpenJDK 21.0.1 LTS** (Temurin distribution). If you don't have OpenJDK 21 installed, follow these steps:
+1. **OpenJDK 21**: The project uses **OpenJDK 21.0.1 LTS** (Temurin distribution). If you don't have OpenJDK 21
+   installed, follow these steps:
 
-   - To verify the version:
-     ```bash
-     java -version
-     ```
+    - To verify the version:
+      ```bash
+      java -version
+      ```
 
-     You should see:
-     ```
-     openjdk version "21.0.1" 2023-10-17 LTS
-     OpenJDK Runtime Environment Temurin-21.0.1+12 (build 21.0.1+12-LTS)
-     OpenJDK 64-Bit Server VM Temurin-21.0.1+12 (build 21.0.1+12-LTS, mixed mode, sharing)
-     ```
+      You should see:
+      ```
+      openjdk version "21.0.1" 2023-10-17 LTS
+      OpenJDK Runtime Environment Temurin-21.0.1+12 (build 21.0.1+12-LTS)
+      OpenJDK 64-Bit Server VM Temurin-21.0.1+12 (build 21.0.1+12-LTS, mixed mode, sharing)
+      ```
 
-   - If OpenJDK 21 is not installed, use **SDKMAN!** to install it:
-   
-     ```bash
-     sdk install java 21-open
-     ```
+    - If OpenJDK 21 is not installed, use **SDKMAN!** to install it:
 
-2. **Maven**: You can install Maven using SDKMAN! if it's not already installed:
-   
+      ```bash
+      sdk install java 21-open
+      ```
+
+2. **Maven**: You can install Maven using SDKMAN! if it'RolePermissionService not already installed:
+
    ```bash
    sdk install maven
