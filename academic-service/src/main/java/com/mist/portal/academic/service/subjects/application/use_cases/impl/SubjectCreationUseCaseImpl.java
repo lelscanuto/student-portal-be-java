@@ -1,5 +1,7 @@
 package com.mist.portal.academic.service.subjects.application.use_cases.impl;
 
+import static com.school.portal.common.utils.AssertUtil.isFalse;
+
 import com.mist.portal.academic.service.subjects.application.dto.SubjectCreateDTO;
 import com.mist.portal.academic.service.subjects.application.dto.SubjectLiteDTO;
 import com.mist.portal.academic.service.subjects.application.mappers.SubjectMapper;
@@ -43,9 +45,8 @@ public class SubjectCreationUseCaseImpl implements SubjectCreationUseCase {
   public SubjectLiteDTO create(@Nonnull SubjectCreateDTO subjectCreateDTO) {
 
     // Validate that the subject code is not already in use
-    if (subjectRepository.existsByCode(subjectCreateDTO.code())) {
-      throw new SubjectAlreadyExistsException(subjectCreateDTO.code());
-    }
+    isFalse(subjectRepository.existsByCode(subjectCreateDTO.code()))
+        .elseThrow(() -> SubjectAlreadyExistsException.ofCode(subjectCreateDTO.code()));
 
     // Create a new subject using the factory
     final var newSubject = subjectFactory.create(subjectCreateDTO);
